@@ -1,0 +1,95 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100;1,200&display=swap');
+*{
+    box-sizing: border-box;
+}
+
+.blogTitle{
+    font-family: 'Victor Mono', monospace;
+    /* background-color: #aaa; */
+    display: flex;
+    margin: 10px;
+    padding: 0;
+    font-size: 4rem;
+    font-weight: bolder;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+}
+
+.blogDate{
+    font-family: 'Victor Mono', monospace;
+    color: #b78b08;
+    display: flex;
+    justify-content: right;
+    margin: 1vh 3vw;
+    size: 0.8rem;
+    font-weight: bolder;
+}
+
+.blogAuthor{
+    margin: 1vh 3vw;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+img{
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 30vh; */
+    width: 90vw;
+    max-height: 300px;
+    object-fit: contain;
+}
+
+.blogDescription{
+    font-size: 1.2rem;
+    margin: 10vh 3vw;
+}
+
+.buttons{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Styling for the container div */
+/* .editBlog,.deleteBlog {
+    padding: 5px 10px;
+    background: #7d7e81;
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center;
+    gap: 5px; 
+  } */
+  .editBlog a,.deleteBlog a {
+    display: inline-flex;
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold; /* Adjust font weight as needed */
+    padding: 5px 10px;
+    color: #111827; /* Replace with your desired color */
+    align-items: center; 
+    justify-content: center;
+    background-color:  #7d7e81;
+    text-decoration: none;
+  }
+  
+  /* Styling for the SVG */
+.editBlog svg,.deleteBlog svg {
+    width: 1.5rem; /* Adjust width as needed */
+    height: 1.5rem; /* Adjust height as needed */
+    stroke: currentColor; /* Use the current text color for the SVG stroke */
+    stroke-width: 2.5; /* Adjust stroke width as needed */
+    fill: none; /* Do not fill the SVG with any color */
+    color: #182133; /* Replace with your desired color */
+  }
+  
+  /* Styling for the text */
+  
