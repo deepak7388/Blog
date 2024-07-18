@@ -1,6 +1,4 @@
-//ddO9Nz92d7PBWcq0
-//mongodb+srv://blog:<password>@cluster0.o5bkf8c.mongodb.net/?
-//mongodb+srv://blog:ddO9Nz92d7PBWcq0@cluster0.o5bkf8c.mongodb.net/?
+
 import React, { useState } from "react";
 import "../styles/RegisterPage.css";
 import { Navigate } from "react-router-dom";
