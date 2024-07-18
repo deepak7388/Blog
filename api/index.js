@@ -1,7 +1,4 @@
-//mongodb+srv://rajatdhull37:mern-blog@0037@cluster0.a7mmzsf.mongodb.net/?retryWrites=true&w=majority
-//mern-blog@0037
-//mongodb+srv://blog:<password>@cluster0.o5bkf8c.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-//blog-app8miyvzem6z3OsW0g
+
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
