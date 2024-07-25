@@ -18,12 +18,13 @@ mongoose
   .connect(uri)
   .then(() => {
     app.listen(4000, () => {
-      console.log("Server started at port " + 4000);
+      console.log("Server started at port " + 3000);
     });
   })
   .catch((err) => {
     console.log(err);
   });
+
 
 app.use("/user", userRouter);
 app.use("/blog", blogRouter);
@@ -32,5 +33,13 @@ app.use("/blog", blogRouter);
 //     // console.log(email,username,password);
 //     // const userDoc=User.create({email,username,password});
 //     res.json(req);
-// })
+// });
+
+app.get('/',(req,res)=>{
+    // const {email,username,password}=req.body;
+    // console.log(email,username,password);
+    // const userDoc=User.create({email,username,password});
+    res.json({message: "server is running successfully"});
+});
+
 // app.listen(4000);
