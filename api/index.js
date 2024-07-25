@@ -8,7 +8,7 @@ const blogRouter = require("./routes/blogRoutes");
 const user = require("./models/user");
 const blog = require("./models/blog");
 const cookieParser = require("cookie-parser");
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+// app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 app.use(express.json());
 app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
