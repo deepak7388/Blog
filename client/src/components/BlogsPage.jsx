@@ -25,7 +25,8 @@ const BlogsPage = () => {
     <div>
         {
             posts.length>0 && posts.map(post=>(
-                <BlogCard {...post}/>
+                //<BlogCard {...post}/>
+                <BlogCard key={post._id} {...post} />
             ))
         }
     </div>
