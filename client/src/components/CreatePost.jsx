@@ -1,42 +1,45 @@
-import React, { useState} from 'react';
-import {Navigate} from 'react-router-dom'
-import '../styles/CreatePost.css'; // Import the CSS file for styling
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
+import React, { useState } from "react";
+import { Navigate } from "react-router-dom";
+import "../styles/CreatePost.css"; // Import the CSS file for styling
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 const CreatePost = () => {
-  const [title, setTitle] = useState('');
-  const [summary, setSummary] = useState('');
+  const [title, setTitle] = useState("");
+  const [summary, setSummary] = useState("");
   const [image, setImage] = useState(null);
-  const [description,setDescription] =useState('');
+  const [description, setDescription] = useState("");
   const [redirect, setRedirect] = useState(false);
 
-  async function createNewPost(ev){
+  async function createNewPost(ev) {
     ev.preventDefault();
     // Process the form data or make API calls here
-    console.log('Title:', title);
-    console.log('Summary:', summary);
-    console.log('Image:', image);
+    console.log("Title:", title);
+    console.log("Summary:", summary);
+    console.log("Image:", image);
     const data = new FormData();
-    data.set('title', title);
-    data.set('summary', summary);
-    data.set('description', description);
-    if(image!=null) data.set('files', image[0]);
+    data.set("title", title);
+    data.set("summary", summary);
+    data.set("description", description);
+    if (image != null) data.set("files", image[0]);
     // console.log("file",data.get(`files`), image[0]);
     ev.preventDefault();
-    const response = await fetch('http://localhost:4000/blog/create', {
-      method: 'POST',
-      body: data,
-      credentials: 'include',
-    });
-    console.log("resp: ",response);
+    const response = await fetch(
+      "https://blog-backend-s667.onrender.com/blog/create",
+      {
+        method: "POST",
+        body: data,
+        credentials: "include",
+      }
+    );
+    console.log("resp: ", response);
     if (response.ok) {
       setRedirect(true);
     }
   }
 
   if (redirect) {
-    return <Navigate to={'/'} />
+    return <Navigate to={"/"} />;
   }
 
   const handleImageChange = (e) => {
@@ -46,14 +49,18 @@ const CreatePost = () => {
 
   const modules = {
     toolbar: [
-      [{ 'header': [1, 2, false] }],
-      ['bold', 'italic', 'underline','strike', 'blockquote'],
-      [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
-      ['link', 'image'],
-      ['clean']
+      [{ header: [1, 2, false] }],
+      ["bold", "italic", "underline", "strike", "blockquote"],
+      [
+        { list: "ordered" },
+        { list: "bullet" },
+        { indent: "-1" },
+        { indent: "+1" },
+      ],
+      ["link", "image"],
+      ["clean"],
     ],
-  }
-
+  };
 
   return (
     <div className="form-container">
@@ -81,7 +88,7 @@ const CreatePost = () => {
           required
         />
 
-        <ReactQuill theme="snow" modules={modules} onChange={setDescription}/>
+        <ReactQuill theme="snow" modules={modules} onChange={setDescription} />
         <button type="submit" className="submit-button">
           Post
         </button>

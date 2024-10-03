@@ -4,13 +4,15 @@ import BlogCard from "./BlogCard";
 const BlogsPage = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/blog/getBlogs").then((response) => {
-      console.log("PostResp: ", posts);
-      response.json().then((posts) => {
-        console.log("Posts: ", posts);
-        setPosts(posts);
-      });
-    });
+    fetch("https://blog-backend-s667.onrender.com/blog/getBlogs").then(
+      (response) => {
+        console.log("PostResp: ", posts);
+        response.json().then((posts) => {
+          console.log("Posts: ", posts);
+          setPosts(posts);
+        });
+      }
+    );
   }, []);
 
   //sample data

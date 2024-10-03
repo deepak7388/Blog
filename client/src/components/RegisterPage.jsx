@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import "../styles/RegisterPage.css";
 import { Navigate } from "react-router-dom";
@@ -29,11 +28,14 @@ const RegisterPage = () => {
     ev.preventDefault();
     // console.log(email);
 
-    const response = await fetch("http://localhost:4000/user/register", {
-      method: "POST",
-      body: JSON.stringify({ email, username, password }),
-      headers: { "Content-Type": "application/json" },
-    });
+    const response = await fetch(
+      "https://blog-backend-s667.onrender.com/user/register",
+      {
+        method: "POST",
+        body: JSON.stringify({ email, username, password }),
+        headers: { "Content-Type": "application/json" },
+      }
+    );
 
     console.log("response", response);
     if (response.status === 400) {

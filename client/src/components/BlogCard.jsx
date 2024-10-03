@@ -25,7 +25,10 @@ const BlogCard = ({
     <div className="blog-card">
       <Link to={`/blog/${_id}`}>
         <div className="image">
-          <img src={"http://localhost:4000/" + cover} alt="Blog" />
+          <img
+            src={"https://blog-backend-s667.onrender.com/" + cover}
+            alt="Blog"
+          />
         </div>
       </Link>
       <div className="content">
