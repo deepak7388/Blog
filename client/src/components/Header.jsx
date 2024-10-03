@@ -7,7 +7,7 @@ const Header = () => {
   const { userInfo, setUserInfo } = useContext(UserContext);
   const [redirect, setRedirect] = useState(false);
   useEffect(() => {
-    fetch("https://blog-backend-s667.onrender.com/user/profile", {
+    fetch("http://localhost:4000/user/profile", {
       credentials: "include",
     }).then((response) => {
       if (response.status === 401) {
@@ -23,7 +23,7 @@ const Header = () => {
   }, [userInfo]);
 
   function logout() {
-    fetch("https://blog-backend-s667.onrender.com/logout", {
+    fetch("http://localhost:4000/user/logout", {
       credentials: "include",
       method: "POST",
     });

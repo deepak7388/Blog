@@ -24,14 +24,11 @@ const CreatePost = () => {
     if (image != null) data.set("files", image[0]);
     // console.log("file",data.get(`files`), image[0]);
     ev.preventDefault();
-    const response = await fetch(
-      "https://blog-backend-s667.onrender.com/blog/create",
-      {
-        method: "POST",
-        body: data,
-        credentials: "include",
-      }
-    );
+    const response = await fetch("http://localhost:4000/blog/create", {
+      method: "POST",
+      body: data,
+      credentials: "include",
+    });
     console.log("resp: ", response);
     if (response.ok) {
       setRedirect(true);

@@ -14,16 +14,14 @@ const EditBlog = () => {
   const [redirect, setRedirect] = useState(false);
 
   useEffect(() => {
-    fetch(`https://blog-backend-s667.onrender.com/blog/${id}`).then(
-      (response) => {
-        response.json().then((blog) => {
-          // console.log("blog",blog);
-          setTitle(blog.title);
-          setSummary(blog.summary);
-          setDescription(blog.description);
-        });
-      }
-    );
+    fetch(`http://localhost:4000/blog/${id}`).then((response) => {
+      response.json().then((blog) => {
+        // console.log("blog",blog);
+        setTitle(blog.title);
+        setSummary(blog.summary);
+        setDescription(blog.description);
+      });
+    });
   }, [id]);
 
   async function editBlog(ev) {
@@ -41,14 +39,11 @@ const EditBlog = () => {
     // console.log("data",data);
     // console.log("file",data.get(`files`), image[0]);
     ev.preventDefault();
-    const response = await fetch(
-      "https://blog-backend-s667.onrender.com/blog/" + id,
-      {
-        method: "PUT",
-        body: data,
-        credentials: "include",
-      }
-    );
+    const response = await fetch("http://localhost:4000/blog/" + id, {
+      method: "PUT",
+      body: data,
+      credentials: "include",
+    });
     console.log("resp: ", response);
     if (response.ok) {
       setRedirect(true);
